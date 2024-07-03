@@ -37,7 +37,7 @@ class Staff extends Authenticatable
         'password',
     ];
 
-    protected $guard_name = 'staff';
+    protected $name = 'staff';
 
     /**
      * The attributes that should be hidden for arrays.
