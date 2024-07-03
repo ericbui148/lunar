@@ -14,19 +14,19 @@ class SyncRolesPermissions
 
         $permissions = $manifest->getPermissions();
 
-        $guard = 'staff';
+        $guard = 'Staff';
 
-        foreach (['admin', 'staff'] as $roleName) {
+        foreach (['Admin', 'Staff'] as $roleName) {
             Role::query()->firstOrCreate([
                 'name' => $roleName,
-                'guard_name' => $guard,
+                'display_name' => $guard,
             ]);
         }
 
         foreach ($permissions as $permission) {
             Permission::firstOrCreate([
                 'name' => $permission->handle,
-                'guard_name' => $guard,
+                'display_name' => $guard,
             ]);
         }
     }
